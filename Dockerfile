@@ -15,10 +15,6 @@ RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tl
         -Uri "https://github.com/caddyserver/dist/raw/979e498d6d01e1fe7c22db848a3e3bc65369183f/welcome/index.html" \
         -OutFile "/usr/share/caddy/index.html"
  
- # Copy Project
-COPY /Project/webapp/src/main/webapp/index.html /usr/share/caddy
-#COPY \Project\webapp\src\main\webapp\index.html \usr\share\caddy\
-
 # https://github.com/caddyserver/caddy/releases
 ENV CADDY_VERSION v2.5.2
 
@@ -51,3 +47,7 @@ EXPOSE 2019
 RUN ["caddy", "version"]
 
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
+
+# Copy Project
+COPY /Project/webapp/src/main/webapp/index.html /usr/share/caddy
+#COPY \Project\webapp\src\main\webapp\index.html \usr\share\caddy
