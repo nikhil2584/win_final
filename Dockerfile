@@ -44,7 +44,8 @@ EXPOSE 443
 EXPOSE 2019
 
 # Copy Project
-COPY .\Project\webapp\src\main\webapp\index.html \usr\share\caddy\
+ADD \Project\webapp\src\main\webapp\index.html \usr\share\caddy\
+#COPY \Project\webapp\src\main\webapp\index.html \usr\share\caddy\
 
 # Make sure it runs and reports its version
 RUN ["caddy", "version"]
