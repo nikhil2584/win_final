@@ -48,7 +48,3 @@ RUN ["caddy", "version"]
 
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
 
-# Copy Project
-RUN cp -r /Project/webapp/src/main/webapp/index.html /usr/share/caddy
-#COPY /Project/webapp/src/main/webapp/index.html /usr/share/caddy
-#COPY \Project\webapp\src\main\webapp\index.html \usr\share\caddy
