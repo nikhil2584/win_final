@@ -43,7 +43,7 @@ EXPOSE 80
 EXPOSE 443
 EXPOSE 2019
 #Copying project into container
-Add /win_final/project/webapp/src/main/webapp/index.html /usr/share/caddy/
+Add index.html /usr/share/caddy/
 
 # Make sure it runs and reports its version
 RUN ["caddy", "version"]
