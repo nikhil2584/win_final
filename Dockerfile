@@ -42,11 +42,8 @@ LABEL org.opencontainers.image.source="https://github.com/caddyserver/caddy-dock
 EXPOSE 80
 EXPOSE 443
 EXPOSE 2019
-#Copying project into container
-Add index.html /usr/share/caddy/
 
 # Make sure it runs and reports its version
 RUN ["caddy", "version"]
-
 
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
